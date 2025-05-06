@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../pages/index.css'
+
 
 const UserCard = ({ user }) => {
   const [showDetails, setShowDetails] = useState(false);
