@@ -1,5 +1,5 @@
 import { useState } from "react";
-import './index.css'
+// import './index.css'
 
 export default function Home({ intialState }) {
   const [data, setData] = useState(intialState);
@@ -54,9 +54,9 @@ export default function Home({ intialState }) {
             alignItems:'center'
             
           }}>
-            <p><strong>Name:</strong> {user.name}</p>
-            <p><strong>Email:</strong> {user.email}</p>
-            <p><strong>City:</strong> {user.address.city}</p>
+            <p style={{textAlign: 'center'}}><strong>Name:</strong> {user.name}</p>
+            <p style={{textAlign: 'center'}}><strong>Email:</strong> {user.email}</p>
+            <p style={{textAlign: 'center'}}><strong>City:</strong> {user.address.city}</p>
 
             <button
               onClick={() =>
@@ -65,7 +65,16 @@ export default function Home({ intialState }) {
                   [user.id]: !prev[user.id]
                 }))
               }
-              style={{ marginTop: '10px' }}
+              style={{ marginTop: '10px', borderRadius: '8px',
+                border: '1px solid transparent',
+                padding: '0.6em 1.2em',
+                fontSize: '1em',
+                fontWeight: '500',
+                fontFamily: 'inherit',
+                color: 'aliceblue',
+                backgroundColor: '#1a1a1a',
+                cursor: 'pointer',
+                transition: "border-color 0.25s" }}
             >
               {showDetails[user.id] ? 'Hide Details' : 'Show Details'}
             </button>
@@ -83,7 +92,16 @@ export default function Home({ intialState }) {
       {loading && <p>Loading...</p>}
       {error && <p style={{ color: 'red' }}>{error}</p>}
 
-      <button onClick={loadMore} disabled={loading}>
+      <button onClick={loadMore} disabled={loading} style={{ marginTop: '10px', borderRadius: '8px',
+                border: '1px solid transparent',
+                padding: '0.6em 1.2em',
+                fontSize: '1em',
+                fontWeight: '500',
+                fontFamily: 'inherit',
+                color: 'aliceblue',
+                backgroundColor: '#1a1a1a',
+                cursor: 'pointer',
+                transition: "border-color 0.25s" }}>
         {loading ? "Loading..." : "Load More Users"}
       </button>
     </div>
