@@ -21,7 +21,16 @@ const UserCard = ({ user }) => {
       <p><strong>City:</strong> {user.address.city}</p>
       <button
         onClick={() => setShowDetails(!showDetails)}
-        className="mt-3 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition"
+        style={{ marginTop: '10px', borderRadius: '8px',
+          border: '1px solid transparent',
+          padding: '0.6em 1.2em',
+          fontSize: '1em',
+          fontWeight: '500',
+          fontFamily: 'inherit',
+          color: 'aliceblue',
+          backgroundColor: '#1a1a1a',
+          cursor: 'pointer',
+          transition: "border-color 0.25s" }}
       >
         {showDetails ? 'Hide Details' : 'Show Details'}
       </button>
